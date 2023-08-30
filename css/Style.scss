@@ -1,8 +1,8 @@
 $planetCount: 9;
-$planetSize: 1200px; // Size of each planet
-$planetSpacing: 2300px; // Space between each planet
+$planetSize: 1200px;
+$planetSpacing: 2300px;
 $planetTransitionSpeed: 2s;
-$mainPlanetViewAmount: 280; // Less means we see more of the planet at the bottom
+$mainPlanetViewAmount: 280;
 $globalPerspective: 800px;
 $sceneAxisTilt: -20deg;
 $menuSpacing: 14px;
@@ -21,7 +21,6 @@ $pluto: #FF8732;
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
 
-// fix
 
 .solar_systm {
 	transform-style: preserve-3d;
@@ -83,7 +82,7 @@ $pluto: #FF8732;
 	width: $planetSize;
 	border-radius: $planetSize / 2;
 	background: red;
-	transition: transform 2.8s .23s cubic-bezier(0.33, 0, 0, 1), opacity 2s .8s, box-shadow 0s 0s; //
+	transition: transform 2.8s .23s cubic-bezier(0.33, 0, 0, 1), opacity 2s .8s, box-shadow 0s 0s;
 	background-size: 1140px 910px !important;
 	top: auto;
 	bottom: - $planetSize + $mainPlanetViewAmount;
@@ -355,7 +354,6 @@ body {
 			background-size: auto 100% !important;
 			position: absolute;
 			border-radius: 100px;
-			//border: 2px solid white;
 			box-shadow: 0 -13px 10px 2px black inset;
 		}
 
@@ -389,7 +387,6 @@ body {
 				position: relative;
 				top: 3px;
 				transition: all 0.3s;
-				//transform: skew(-10deg);
 				margin-right: 0px;
 			}
 		}
@@ -403,7 +400,6 @@ body {
 
 		@for $l from 1 through $planetCount {
 			&:nth-of-type(#{$l}) {
-				// Caluclate middle and distribute evenly
 				$labelSize: 34px;
 				$labelSpacing: $menuSpacing;
 				$totalHeight: ($labelSize * $planetCount)+($labelSpacing * ($planetCount)) / 2;
@@ -460,7 +456,6 @@ body {
 		height: 100vh;
 		transition: all 0.2s;
 		z-index: 10;
-
 		width: 0;
 		background: rgba(56, 37, 99, 0.38);
 
@@ -473,7 +468,6 @@ body {
 			left: -140px;
 			opacity: 0;
 			right: 0;
-
 			top: 50%;
 			transform: translateY(-50%);
 		}
@@ -493,9 +487,7 @@ body {
 		opacity: 1;
 		border-radius: 100%;
 		z-index: 0;
-		//transition: all .95s .2s;
 		box-shadow: 0px -190px 215px 110px black inset;
-
 	}
 
 	@for $a from 1 through $planetCount {
@@ -516,9 +508,6 @@ body {
 		}
 
 		input[type="radio"][name="planet"] {
-			//@extend %checkbox;
-			appearance: none;
-
 			&::after {
 				@extend %absPosition;
 				@extend %trigger;
@@ -543,8 +532,6 @@ body {
 				}
 
 				&+#{$traverse} div {
-					// Now in root
-
 					& .solar_systm {
 
 
@@ -711,7 +698,6 @@ body {
 			@for $i from 1 through 10 {
 				&:nth-of-type(#{$i}) {
 					& .planet {
-						// This is our initial view of the planets before anything is pressed
 						$translateY: 0;
 						$translateZ: -$planetSpacing * ($i - 1);
 						$opacity: 2 - ($i - 1);
